@@ -1,0 +1,177 @@
+// Google Pixel
+// Taken from https://github.com/picturepan2/devices.css
+
+$device-silver: #e2e3e4;
+$device-silver-dark: darken($device-silver, 20%);
+$device-silver-panel: #eeeeef;
+
+$device-black: #6a6967;
+$device-black-dark: darken($device-black, 20%);
+$device-black-panel: #211d1c;
+
+$device-blue: #7695ff;
+$device-blue-dark: darken($device-blue, 15%);
+$device-blue-panel: #f7f7f8;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Nunito", "Lato", sans-serif;
+}
+
+.device-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  * {
+    box-sizing: content-box;
+  }
+}
+
+.device-google-pixel {
+  width: fit-content;
+  position: relative;
+
+  .device-frame {
+    background: $device-silver-panel;
+    border-radius: 54px;
+    box-shadow: inset 0 0 0 2px $device-silver-dark,
+      inset 0 0 0 6px $device-silver,
+      inset 0 0 0 10px lighten($device-silver-panel, 10%);
+    height: calc(744px + 82px);
+    padding: 18px 18px;
+    padding-bottom: 20px;
+    width: 360px;
+  }
+
+  .device-screen {
+    background-color: white;
+    height: calc(100% - 34px);
+    overflow: auto;
+    scrollbar-width: thin;
+    border-radius: 18px;
+    padding-top: 32px;
+
+    border: 2px solid #2224;
+    border-radius: 40px;
+
+    font-size: 12pt;
+  }
+
+  .device-stripe {
+    border-top: 6px solid rgba(#333, 0.15);
+    bottom: 0;
+    left: 254px;
+    position: absolute;
+    top: 0;
+    width: 8px;
+
+    &::after,
+    &::before {
+      border: solid rgba(#333, 0.15);
+      border-width: 0 6px;
+      content: "";
+      height: 10px;
+      left: -254px;
+      position: absolute;
+      width: 360px;
+      z-index: 9;
+    }
+    &::after {
+      top: 60px;
+    }
+    &::before {
+      bottom: 46px;
+    }
+  }
+
+  .device-sensors {
+    background: #000;
+    border-radius: 99px;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: calc(50% - 13px);
+    top: 30px;
+  }
+
+  .device-btns {
+    background: $device-silver-dark;
+    height: 102px;
+    position: absolute;
+    right: -2px;
+    top: 298px;
+    width: 3px;
+  }
+
+  .device-power {
+    background: $device-silver-dark;
+    height: 50px;
+    position: absolute;
+    right: -2px;
+    top: 184px;
+    width: 3px;
+  }
+
+  // Black edition
+  &.device-black {
+    .device-frame {
+      background: $device-black-panel;
+      box-shadow: inset 0 0 0 2px $device-black-dark,
+        inset 0 0 0 6px $device-black,
+        inset 0 0 0 10px lighten($device-black-panel, 10%);
+    }
+
+    .device-stripe {
+      &,
+      &::after,
+      &::before {
+        border-color: rgba(#0d0d0d, 0.35);
+      }
+    }
+
+    .device-sensors {
+      background: #444;
+
+      &::after {
+        background: #0d0d0d;
+      }
+    }
+
+    .device-btns {
+      &,
+      &::after,
+      &::before {
+        background: $device-black-dark;
+      }
+    }
+
+    .device-power {
+      background: $device-black-dark;
+    }
+  }
+
+  // Blue edition
+  &.device-blue {
+    .device-frame {
+      box-shadow: inset 0 0 0 2px $device-blue-dark,
+        inset 0 0 0 6px $device-blue,
+        inset 0 0 0 10px lighten($device-blue-panel, 10%);
+    }
+
+    .device-btns {
+      &,
+      &::after,
+      &::before {
+        background: $device-blue-dark;
+      }
+    }
+
+    .device-power {
+      background: $device-blue-dark;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Hello, 世界!",
+  "short_name": "Hello, 世界!",
+  "description": "A Hello World example in Svelte",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "developer": {
+    "name": "diamondburned",
+    "url": "https://libdb.so"
+  },
+  "locales": {
+    "en-US": {
+      "name": "Hello, World!",
+      "subtitle": "A Hello World example in Svelte",
+      "description": "A Hello World example in Svelte"
+    }
+  },
+  "default_locale": "en-US"
+}
